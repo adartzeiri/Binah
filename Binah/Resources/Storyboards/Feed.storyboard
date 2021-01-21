@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bhK-YD-utC">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Feed View Controller-->
+        <scene sceneID="af3-fs-Lz4">
+            <objects>
+                <viewController storyboardIdentifier="FeedViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bhK-YD-utC" customClass="FeedViewController" customModule="Binah" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0Vv-J8-cc4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GPv-ij-ZgJ">
+                                <rect key="frame" x="0.0" y="134" width="414" height="728"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="60" translatesAutoresizingMaskIntoConstraints="NO" id="1TM-IF-Xbc">
+                                <rect key="frame" x="0.0" y="44" width="414" height="90"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="7um-QS-q60">
+                                        <rect key="frame" x="20" y="20" width="374" height="50"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lXm-FG-AHQ" customClass="CustomView" customModule="Binah" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="184.5" height="50"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter By:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zAM-n9-B19">
+                                                        <rect key="frame" x="59" y="15" width="66.5" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" red="0.82352941180000006" green="0.82352941180000006" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.0" green="0.12941176469999999" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="zAM-n9-B19" firstAttribute="centerY" secondItem="lXm-FG-AHQ" secondAttribute="centerY" id="BvE-ce-Xk1"/>
+                                                    <constraint firstItem="zAM-n9-B19" firstAttribute="centerX" secondItem="lXm-FG-AHQ" secondAttribute="centerX" id="LOz-Th-HcF"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="6U8-AE-03s">
+                                                <rect key="frame" x="189.5" y="0.0" width="184.5" height="51"/>
+                                                <segments>
+                                                    <segment title="Answered"/>
+                                                    <segment title="Unanswered"/>
+                                                </segments>
+                                                <connections>
+                                                    <action selector="segmentValueChanged:" destination="bhK-YD-utC" eventType="valueChanged" id="nKB-fO-IRw"/>
+                                                </connections>
+                                            </segmentedControl>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="7um-QS-q60" firstAttribute="top" secondItem="1TM-IF-Xbc" secondAttribute="top" constant="20" symbolic="YES" id="3Bf-NT-Flh"/>
+                                    <constraint firstAttribute="bottom" secondItem="7um-QS-q60" secondAttribute="bottom" constant="20" symbolic="YES" id="Wcz-bs-ihz"/>
+                                    <constraint firstItem="7um-QS-q60" firstAttribute="leading" secondItem="1TM-IF-Xbc" secondAttribute="leading" constant="20" symbolic="YES" id="Yl7-8w-XX0"/>
+                                    <constraint firstAttribute="trailing" secondItem="7um-QS-q60" secondAttribute="trailing" constant="20" symbolic="YES" id="sIb-YF-k3A"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W6b-gF-muL" customClass="PlaceholderView" customModule="Binah" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="134" width="414" height="728"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="UmH-IE-sA8"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="GPv-ij-ZgJ" firstAttribute="leading" secondItem="UmH-IE-sA8" secondAttribute="leading" id="22t-hU-t0K"/>
+                            <constraint firstItem="UmH-IE-sA8" firstAttribute="trailing" secondItem="GPv-ij-ZgJ" secondAttribute="trailing" id="9fu-U8-YTp"/>
+                            <constraint firstItem="UmH-IE-sA8" firstAttribute="trailing" secondItem="W6b-gF-muL" secondAttribute="trailing" id="H6X-VF-VUv"/>
+                            <constraint firstItem="W6b-gF-muL" firstAttribute="leading" secondItem="UmH-IE-sA8" secondAttribute="leading" id="QZo-XZ-aF8"/>
+                            <constraint firstItem="UmH-IE-sA8" firstAttribute="bottom" secondItem="GPv-ij-ZgJ" secondAttribute="bottom" id="dvG-QR-dfU"/>
+                            <constraint firstItem="1TM-IF-Xbc" firstAttribute="top" secondItem="UmH-IE-sA8" secondAttribute="top" id="ebc-a0-Ki2"/>
+                            <constraint firstItem="1TM-IF-Xbc" firstAttribute="leading" secondItem="UmH-IE-sA8" secondAttribute="leading" id="fQu-Qv-Ofa"/>
+                            <constraint firstItem="UmH-IE-sA8" firstAttribute="bottom" secondItem="W6b-gF-muL" secondAttribute="bottom" id="i2K-Hl-xbG"/>
+                            <constraint firstItem="W6b-gF-muL" firstAttribute="top" secondItem="1TM-IF-Xbc" secondAttribute="bottom" id="nYI-pq-7TR"/>
+                            <constraint firstItem="UmH-IE-sA8" firstAttribute="trailing" secondItem="1TM-IF-Xbc" secondAttribute="trailing" id="ro4-th-HfM"/>
+                            <constraint firstItem="GPv-ij-ZgJ" firstAttribute="top" secondItem="1TM-IF-Xbc" secondAttribute="bottom" id="zyZ-QM-O4m"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="filterByLabel" destination="zAM-n9-B19" id="4kt-Jd-U7U"/>
+                        <outlet property="placeholderView" destination="W6b-gF-muL" id="Hzp-Bm-Wbv"/>
+                        <outlet property="segmentedControll" destination="6U8-AE-03s" id="5RR-lE-WEW"/>
+                        <outlet property="tableView" destination="GPv-ij-ZgJ" id="XRA-ie-8bt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EeN-VQ-GDI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="540.57971014492762" y="116.51785714285714"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
